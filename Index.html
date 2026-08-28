@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Fahad Rafique | ML Engineer & Bioinformatician</title>
+
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #e6edf3;       /* High contrast body text (WCAG AAA) */
+            --text-muted: #8b949e;      /* Readable secondary text */
+            --text-heading: #ffffff;
+            --accent: #58a6ff;          /* 4.5+:1 contrast against card-bg */
+            --accent-hover: #1f6feb;
+            --input-bg: #0d1117;
+            --success-color: #2ea043;
+        }
+
+        /* Prevent horizontal scroll on mobile */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 1rem;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            box-sizing: border-box;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            color: var(--text-heading);
+            font-size: clamp(1.75rem, 5vw, 2.2rem);
+            line-height: 1.25;
+            margin: 0 0 8px 0;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .bio {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 24px;
+        }
+
+        /* Mobile Touch-First Button Layout */
+        .links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            background-color: var(--card-bg);
+            color: var(--accent);
+            border: 1px solid var(--border-color);
+            padding: 12px 18px; /* 48px minimum vertical touch target */
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn:hover, .btn:focus {
+            background-color: var(--accent-hover);
+            color: #ffffff;
+            border-color: var(--accent-hover);
+            outline: 2px solid var(--accent);
+        }
+
+        .btn-submit {
+            background-color: #238636;
+            color: #ffffff;
+            border: 1px solid rgba(240, 246, 252, 0.1);
+            width: 100%;
+            min-height: 48px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover, .btn-submit:focus {
+            background-color: #2ea043;
+        }
+
+        .section-title {
+            color: var(--text-heading);
+            font-size: 1.35rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--text-heading);
+            font-size: 1.15rem;
+        }
+
+        /* Responsive, Non-Overflowing Project Images */
+        .work-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin-top: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-heading);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 12px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-main);
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: 2px solid var(--accent);
+            border-color: var(--accent);
+        }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 600px) {
+            .links {
+                flex-direction: column;
+                width: 100%;
+            }
+            .links .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Muhammad Fahad Rafique</h1>
+            <div class="subtitle">ML Systems Engineer | Bioinformatician</div>
+            <p class="bio">
+                Building scalable machine learning pipelines, search intelligence agents, and computational biology solutions. Specializing in rank decay detection, differential gene analysis, and automated workflows.
+            </p>
+            <nav class="links" aria-label="Social and Project Links">
+                <a href="https://github.com/Fahad8748" target="_blank" rel="noopener noreferrer" class="btn">GitHub Profile</a>
+                <a href="https://github.com/Fahad8748/flyrank-ml-internship" target="_blank" rel="noopener noreferrer" class="btn">FlyRank Repository</a>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2 class="section-title">Current Projects & Work</h2>
+            
+            <article class="card">
+                <h3>SearchGuard-Agent (Capstone Project)</h3>
+                <p>An autonomous search intelligence agent built in Python to monitor organic rank decay, run leakage audits, and trigger content refresh notifications.</p>
+                <div class="links" style="margin-top: 12px; margin-bottom: 0;">
+                    <a href="https://github.com/Fahad8748/flyrank-ml-internship" target="_blank" rel="noopener noreferrer" class="btn">View Code Repository</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>FlyRank AI ML Internship</h3>
+                <p>Developing reproducible ML artifacts, temporal data contracts, intent classification pipelines, and autonomous agent loops.</p>
+            </article>
+
+            <h2 class="section-title" id="contact">Contact Me</h2>
+            <div class="card">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p style="display:none">
+                        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Alex Smith" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="alex@example.com" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Muhammad Fahad Rafique. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
