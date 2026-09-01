@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahad | Data Analyst & Machine Learning Portfolio</title>
+  <meta name="title" content="Fahad | Data Analyst & Machine Learning Portfolio">
+  <meta name="description" content="Portfolio of Fahad — Data Analyst and Machine Learning Practitioner specializing in Python, data pipelines, and interactive analytics.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fahad-portfolio.com/">
+  <meta property="og:title" content="Fahad | Data Analyst & Machine Learning Portfolio">
+  <meta property="og:description" content="Explore machine learning models, statistical analysis, and data engineering projects.">
+  <meta property="og:image" content="https://fahad-portfolio.com/assets/og-preview.png">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Fahad | Data Analyst & Machine Learning Portfolio">
+  <meta property="twitter:description" content="Explore machine learning models, statistical analysis, and data engineering projects.">
+  <meta property="twitter:image" content="https://fahad-portfolio.com/assets/og-preview.png">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --error: #dc2626;
+      --success: #16a34a;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* Hardening Fix: Prevents long unbroken strings from overflowing UI containers */
+      word-break: break-word; 
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      /* Hardening Fix: Dynamic viewport height prevents layout jump on mobile Safari */
+      min-height: 100dvh; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #475569;
+      background-color: #0f172a;
+      color: var(--text);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .error-text {
+      color: var(--error);
+      font-size: 0.8rem;
+      margin-top: 0.35rem;
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.85rem;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .status-toast {
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .status-toast.success { 
+      background-color: rgba(22, 163, 74, 0.2); 
+      color: #4ade80; 
+      border: 1px solid var(--success);
+    }
+
+    .status-toast.error { 
+      background-color: rgba(220, 38, 38, 0.2); 
+      color: #f87171; 
+      border: 1px solid var(--error);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Break Your Own Site Checkpoint</h1>
+    <p class="subtitle">Contact form with edge-case validation and double-submit protection.</p>
+    
+    <form id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="nameInput">Name</label>
+        <input type="text" id="nameInput" maxlength="100" placeholder="Your Name" required />
+        <div class="error-text" id="nameError">Please enter your name.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="emailInput">Email Address</label>
+        <input type="email" id="emailInput" maxlength="150" placeholder="name@example.com" required />
+        <div class="error-text" id="emailError">Please enter a valid email address.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="messageInput">Message</label>
+        <textarea id="messageInput" rows="4" maxlength="500" placeholder="Describe your request..." required></textarea>
+        <div class="error-text" id="messageError">Message cannot be empty or contain only spaces.</div>
+      </div>
+
+      <button type="submit" id="submitBtn">Send Submission</button>
+      <div id="statusToast" class="status-toast"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const toast = document.getElementById('statusToast');
+
+    const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Reset visible error states
+      document.querySelectorAll('.error-text').forEach(el => el.style.display = 'none');
+      toast.style.display = 'none';
+
+      // Hardening Fix: .trim() prevents empty-space submission ("   ")
+      const name = document.getElementById('nameInput').value.trim();
+      const email = document.getElementById('emailInput').value.trim();
+      const message = document.getElementById('messageInput').value.trim();
+
+      let hasError = false;
+
+      if (!name) {
+        document.getElementById('nameError').style.display = 'block';
+        hasError = true;
+      }
+      if (!email || !validateEmail(email)) {
+        document.getElementById('emailError').style.display = 'block';
+        hasError = true;
+      }
+      if (!message) {
+        document.getElementById('messageError').style.display = 'block';
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      // Hardening Fix: Disable button immediately to prevent rapid double submissions
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Processing...';
+
+      try {
+        // Simulated server request with simulated delay
+        await new Promise((resolve) => setTimeout(resolve, 1000)); 
+
+        toast.className = 'status-toast success';
+        toast.innerText = 'Submitted successfully! Edge cases handled.';
+        toast.style.display = 'block';
+        form.reset();
+      } catch (err) {
+        toast.className = 'status-toast error';
+        toast.innerText = 'Network error encountered.';
+        toast.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Send Submission';
+      }
+    });
+  </script>
+</body>
+</html>
