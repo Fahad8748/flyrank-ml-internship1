@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page & SEO Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahad | Data Analyst & Machine Learning Portfolio</title>
+  <meta name="title" content="Fahad | Data Analyst & Machine Learning Portfolio">
+  <meta name="description" content="Portfolio of Fahad — Data Analyst and Machine Learning Practitioner specializing in Python, predictive modeling, and data pipelines.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Analytics Tracking (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8MT89ZRF1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V8MT89ZRF1');
+  </script>
+
+  <!-- Open Graph / Social Media Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fahad | Data Analyst & Machine Learning Portfolio">
+  <meta property="og:description" content="Explore machine learning models, statistical analysis, and data engineering projects.">
+  <meta property="og:url" content="https://fahad8748.github.io/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://fav.farm/🚀" />
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --error: #dc2626;
+      --success: #16a34a;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      word-break: break-word; /* Hardening: Prevents text overflow on long strings */
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100dvh; /* Mobile Safari URL bar fix */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 1.5rem 0 1.5rem;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #475569;
+      background-color: #0f172a;
+      color: var(--text);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .error-text {
+      color: var(--error);
+      font-size: 0.8rem;
+      margin-top: 0.35rem;
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.85rem;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s, opacity 0.2s;
+    }
+
+    button:hover {
+      background-color: var(--primary-hover);
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .status-toast {
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .status-toast.success { 
+      background-color: rgba(22, 163, 74, 0.2); 
+      color: #4ade80; 
+      border: 1px solid var(--success);
+    }
+
+    .status-toast.error { 
+      background-color: rgba(220, 38, 38, 0.2); 
+      color: #f87171; 
+      border: 1px solid var(--error);
+    }
+
+    /* Footer and Badge Styling */
+    footer {
+      width: 100%;
+      margin-top: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .badge-container {
+      margin-top: 0.75rem;
+    }
+
+    .badge-container img {
+      max-height: 50px;
+      width: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .badge-container img:hover {
+      transform: scale(1.05);
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-container">
+    <div class="card">
+      <h1>Plant Your Flag Checkpoint</h1>
+      <p class="subtitle">Live portfolio with analytics, metadata, and verification badge.</p>
+      
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="nameInput">Name</label>
+          <input type="text" id="nameInput" maxlength="100" placeholder="Your Name" required />
+          <div class="error-text" id="nameError">Please enter your name.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="emailInput">Email Address</label>
+          <input type="email" id="emailInput" maxlength="150" placeholder="name@example.com" required />
+          <div class="error-text" id="emailError">Please enter a valid email address.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="messageInput">Message</label>
+          <textarea id="messageInput" rows="4" maxlength="500" placeholder="Describe your request..." required></textarea>
+          <div class="error-text" id="messageError">Message cannot be empty or contain only spaces.</div>
+        </div>
+
+        <button type="submit" id="submitBtn">Send Submission</button>
+        <div id="statusToast" class="status-toast"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer with FlyRank Graduate Badge -->
+  <footer>
+    <p>&copy; 2026 Fahad. All rights reserved.</p>
+    <div class="badge-container">
+      <a href="https://internship-badge.netlify.app/" target="_blank" rel="noopener noreferrer">
+        <img src="https://internship-badge.netlify.app/badge.svg" alt="FlyRank AI Fluency Graduate Badge" />
+      </a>
+      <p style="margin-top: 0.4rem;">
+        Verified Graduate — <a href="https://aifluency.flyrank.ai/" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; text-decoration: none;">FlyRank AI Fluency Track</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const toast = document.getElementById('statusToast');
+
+    const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      document.querySelectorAll('.error-text').forEach(el => el.style.display = 'none');
+      toast.style.display = 'none';
+
+      // Edge case trim to block space-only submissions
+      const name = document.getElementById('nameInput').value.trim();
+      const email = document.getElementById('emailInput').value.trim();
+      const message = document.getElementById('messageInput').value.trim();
+
+      let hasError = false;
+
+      if (!name) {
+        document.getElementById('nameError').style.display = 'block';
+        hasError = true;
+      }
+      if (!email || !validateEmail(email)) {
+        document.getElementById('emailError').style.display = 'block';
+        hasError = true;
+      }
+      if (!message) {
+        document.getElementById('messageError').style.display = 'block';
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      // Double-click guard
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Processing...';
+
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1000)); 
+
+        toast.className = 'status-toast success';
+        toast.innerText = 'Submitted successfully!';
+        toast.style.display = 'block';
+        form.reset();
+      } catch (err) {
+        toast.className = 'status-toast error';
+        toast.innerText = 'Network error encountered.';
+        toast.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Send Submission';
+      }
+    });
+  </script>
+</body>
+</html>
